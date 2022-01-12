@@ -6,11 +6,6 @@ module.exports = [
     },
     {
         type: 'input',
-        name: 'name',
-        message: 'name?',
-    },
-    {
-        type: 'input',
         name: 'author',
         message: 'author?',
     }
