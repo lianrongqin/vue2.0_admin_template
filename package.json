@@ -1,0 +1,87 @@
+{
+  "name": "<%=name%>",
+  "version": "0.1.0",
+  "private": "<%=private%>",
+  "autor": "<%=author%>",
+  "scripts": {
+    "ui": "vue ui",
+    "dev": "vue-cli-service serve --open",
+    "serve": "vue-cli-service serve",
+    "inspect": "vue inspect > output.webpack.config.js",
+    "build": "cross-env NODE_ENV='production' && vue-cli-service build",
+    "build:stg": "cross-env NODE_ENV='production' && vue-cli-service build --mode stg",
+    "deploy:stg": "lrq deploy -c ./.deploy.js stg",
+    "fix": "eslint --fix --ext .js --ext .ts --ext .vue src"
+  },
+  "dependencies": {
+    "core-js": "^3.4.4",
+    "crypto-js": "^4.0.0",
+    "dag-board": "^0.1.23",
+    "element-ui": "^2.13.0",
+    "febs": "1.0.4",
+    "febs-browser": "1.0.4",
+    "js-md5": "^0.7.3",
+    "qs": "^6.9.4",
+    "sortablejs": "^1.10.2",
+    "store2": "^2.12.0",
+    "vue": "^2.6.12",
+    "vue-class-component": "^7.2.3",
+    "vue-cropper": "^0.4.9",
+    "vue-property-decorator": "^8.4.2",
+    "vue-router": "^3.4.5",
+    "vuex": "^3.1.2",
+    "wangeditor": "^4.7.5"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.35",
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-plugin-eslint": "~4.3.0",
+    "@vue/cli-plugin-pwa": "~4.3.0",
+    "@vue/cli-plugin-typescript": "~4.3.0",
+    "@vue/cli-service": "~4.3.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-import": "^1.13.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "husky": "^4.0.9",
+    "node-sass": "^4.13.0",
+    "node-ssh": "^10.0.2",
+    "register-service-worker": "^1.6.2",
+    "sass-loader": "^8.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "svg-sprite-loader": "^4.1.6",
+    "typescript": "^3.6.5",
+    "vue-template-compiler": "^2.6.10",
+    "vuex-class": "^0.3.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/typescript"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser"
+    }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie < 10",
+    "> 1%",
+    "last 2 versions"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run fix"
+    }
+  }
+}
